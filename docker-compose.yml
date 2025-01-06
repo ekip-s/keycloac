@@ -15,7 +15,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.0.7
     container_name: keycloak
-    command: ["start", "--verbose"]
+    command: ["start", "--verbose", "--import-realm"]
     environment:
       KC_DB: postgres
       KC_DB_ADDR: keycloak-db
@@ -35,6 +35,8 @@ services:
       KC_HOSTNAME: darkmatterauth.ru
     volumes:
       - /etc/letsencrypt/live/darkmatterauth.ru:/etc/x509/https
+      - ./realm-config.json:/opt/keycloak/data/import/realm-config.json
+      - ./clients-config.json:/opt/keycloak/data/import/clients-config.json
     depends_on:
       - keycloak-db
     ports:
