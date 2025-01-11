@@ -491,7 +491,6 @@
             "enabled": true,
             "alwaysDisplayInConsole": false,
             "clientAuthenticatorType": "client-secret",
-            "secret": "${SWAGGER_SECRET}",
             "redirectUris":
             [
                 "https://progressify.ru/*"
