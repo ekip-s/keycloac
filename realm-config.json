@@ -45,7 +45,8 @@
     "quickLoginCheckMilliSeconds": 1000,
     "maxDeltaTimeSeconds": 43200,
     "failureFactor": 30,
-    "defaultRole": {
+    "defaultRole":
+    {
         "id": "01e97b76-6505-4bfc-8f81-c8fb11576947",
         "name": "default-roles-dark_matter",
         "description": "${role_default-roles}",
@@ -53,7 +54,8 @@
         "clientRole": false,
         "containerId": "d45fac81-ea92-4ff5-a0fa-038d5534c178"
     },
-    "requiredCredentials": [
+    "requiredCredentials":
+    [
         "password"
     ],
     "otpPolicyType": "totp",
@@ -63,13 +65,15 @@
     "otpPolicyLookAheadWindow": 1,
     "otpPolicyPeriod": 30,
     "otpPolicyCodeReusable": false,
-    "otpSupportedApplications": [
+    "otpSupportedApplications":
+    [
         "totpAppFreeOTPName",
         "totpAppGoogleName",
         "totpAppMicrosoftAuthenticatorName"
     ],
     "webAuthnPolicyRpEntityName": "keycloak",
-    "webAuthnPolicySignatureAlgorithms": [
+    "webAuthnPolicySignatureAlgorithms":
+    [
         "ES256",
         "RS256"
     ],
@@ -80,10 +84,13 @@
     "webAuthnPolicyUserVerificationRequirement": "not specified",
     "webAuthnPolicyCreateTimeout": 0,
     "webAuthnPolicyAvoidSameAuthenticatorRegister": false,
-    "webAuthnPolicyAcceptableAaguids": [],
-    "webAuthnPolicyExtraOrigins": [],
+    "webAuthnPolicyAcceptableAaguids":
+    [],
+    "webAuthnPolicyExtraOrigins":
+    [],
     "webAuthnPolicyPasswordlessRpEntityName": "keycloak",
-    "webAuthnPolicyPasswordlessSignatureAlgorithms": [
+    "webAuthnPolicyPasswordlessSignatureAlgorithms":
+    [
         "ES256",
         "RS256"
     ],
@@ -94,9 +101,12 @@
     "webAuthnPolicyPasswordlessUserVerificationRequirement": "not specified",
     "webAuthnPolicyPasswordlessCreateTimeout": 0,
     "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": false,
-    "webAuthnPolicyPasswordlessAcceptableAaguids": [],
-    "webAuthnPolicyPasswordlessExtraOrigins": [],
-    "browserSecurityHeaders": {
+    "webAuthnPolicyPasswordlessAcceptableAaguids":
+    [],
+    "webAuthnPolicyPasswordlessExtraOrigins":
+    [],
+    "browserSecurityHeaders":
+    {
         "contentSecurityPolicyReportOnly": "",
         "xContentTypeOptions": "nosniff",
         "referrerPolicy": "no-referrer",
@@ -106,20 +116,24 @@
         "xXSSProtection": "1; mode=block",
         "strictTransportSecurity": "max-age=31536000; includeSubDomains"
     },
-    "smtpServer": {},
+    "smtpServer":
+    {},
     "loginTheme": "keycloak.v2",
     "accountTheme": "keycloak.v3",
     "adminTheme": "keycloak.v2",
     "emailTheme": "",
     "eventsEnabled": false,
-    "eventsListeners": [
+    "eventsListeners":
+    [
         "jboss-logging"
     ],
-    "enabledEventTypes": [],
+    "enabledEventTypes":
+    [],
     "adminEventsEnabled": false,
     "adminEventsDetailsEnabled": false,
     "internationalizationEnabled": false,
-    "supportedLocales": [],
+    "supportedLocales":
+    [],
     "browserFlow": "browser",
     "registrationFlow": "registration",
     "directGrantFlow": "direct grant",
@@ -127,7 +141,8 @@
     "clientAuthenticationFlow": "clients",
     "dockerAuthenticationFlow": "docker auth",
     "firstBrokerLoginFlow": "first broker login",
-    "attributes": {
+    "attributes":
+    {
         "cibaBackchannelTokenDeliveryMode": "poll",
         "cibaAuthRequestedUserHint": "login_hint",
         "oauth2DevicePollingInterval": "5",
@@ -144,10 +159,548 @@
     },
     "userManagedAccessAllowed": false,
     "organizationsEnabled": false,
-    "clientProfiles": {
-        "profiles": []
+    "clientProfiles":
+    {
+        "profiles":
+        []
     },
-    "clientPolicies": {
-        "policies": []
-    }
+    "clientPolicies":
+    {
+        "policies":
+        []
+    },
+    "clients":
+    [
+        {
+            "id": "98321b70-8a88-4855-a9db-1d768e66ec65",
+            "clientId": "account",
+            "name": "${client_account}",
+            "rootUrl": "${authBaseUrl}",
+            "baseUrl": "/realms/dark_matter/account/",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris":
+            [
+                "/realms/dark_matter/account/*"
+            ],
+            "webOrigins":
+            [],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "false",
+                "post.logout.redirect.uris": "+"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "9974dd84-e92e-4073-a819-edcf0585e3df",
+            "clientId": "account-console",
+            "name": "${client_account-console}",
+            "rootUrl": "${authBaseUrl}",
+            "baseUrl": "/realms/dark_matter/account/",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris":
+            [
+                "/realms/dark_matter/account/*"
+            ],
+            "webOrigins":
+            [],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "false",
+                "post.logout.redirect.uris": "+",
+                "pkce.code.challenge.method": "S256"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "protocolMappers":
+            [
+                {
+                    "id": "f4cfe870-2f91-4dfb-a7eb-982160fa0a65",
+                    "name": "audience resolve",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-audience-resolve-mapper",
+                    "consentRequired": false,
+                    "config":
+                    {}
+                }
+            ],
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "bb925e25-4a0f-4190-81b0-bad47310f3b5",
+            "clientId": "admin-cli",
+            "name": "${client_admin-cli}",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris":
+            [],
+            "webOrigins":
+            [],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": false,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": true,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "false",
+                "client.use.lightweight.access.token.enabled": "true"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "d66c91c7-fea8-4a7a-b5d0-9e09bde559de",
+            "clientId": "broker",
+            "name": "${client_broker}",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris":
+            [],
+            "webOrigins":
+            [],
+            "notBefore": 0,
+            "bearerOnly": true,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "true"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "20d72eda-b54d-4a20-82f9-2c2f473260f3",
+            "clientId": "progressify_react_app",
+            "name": "",
+            "description": "",
+            "rootUrl": "https://progressify.ru",
+            "adminUrl": "https://progressify.ru",
+            "baseUrl": "https://progressify.ru",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris":
+            [
+                "https://progressify.ru/*"
+            ],
+            "webOrigins":
+            [
+                "https://progressify.ru"
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "false",
+                "oidc.ciba.grant.enabled": "false",
+                "backchannel.logout.session.required": "true",
+                "post.logout.redirect.uris": "https://progressify.ru/",
+                "display.on.consent.screen": "false",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "77aaa533-f53f-4551-a4fd-4c016a3cd197",
+            "clientId": "progressify_swagger",
+            "name": "",
+            "description": "",
+            "rootUrl": "",
+            "adminUrl": "",
+            "baseUrl": "",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "secret": "${SWAGGER_SECRET}",
+            "redirectUris":
+            [
+                "https://progressify.ru/*"
+            ],
+            "webOrigins":
+            [
+                "https://progressify.ru"
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": true,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "false",
+                "oidc.ciba.grant.enabled": "false",
+                "client.secret.creation.time": "1734960095",
+                "backchannel.logout.session.required": "true",
+                "display.on.consent.screen": "false",
+                "oauth2.device.authorization.grant.enabled": "false",
+                "backchannel.logout.revoke.offline.tokens": "false"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": -1,
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "edfc7293-d641-4dbc-8b3e-9ef440e2484b",
+            "clientId": "realm-management",
+            "name": "${client_realm-management}",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris":
+            [],
+            "webOrigins":
+            [],
+            "notBefore": 0,
+            "bearerOnly": true,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": false,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "true"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": false,
+            "nodeReRegistrationTimeout": 0,
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        },
+        {
+            "id": "1f15fbff-9df4-40cb-b1e3-1dddf48ac9cf",
+            "clientId": "security-admin-console",
+            "name": "${client_security-admin-console}",
+            "rootUrl": "${authAdminUrl}",
+            "baseUrl": "/admin/dark_matter/console/",
+            "surrogateAuthRequired": false,
+            "enabled": true,
+            "alwaysDisplayInConsole": false,
+            "clientAuthenticatorType": "client-secret",
+            "redirectUris":
+            [
+                "/admin/dark_matter/console/*"
+            ],
+            "webOrigins":
+            [
+                "+"
+            ],
+            "notBefore": 0,
+            "bearerOnly": false,
+            "consentRequired": false,
+            "standardFlowEnabled": true,
+            "implicitFlowEnabled": false,
+            "directAccessGrantsEnabled": false,
+            "serviceAccountsEnabled": false,
+            "publicClient": true,
+            "frontchannelLogout": false,
+            "protocol": "openid-connect",
+            "attributes":
+            {
+                "realm_client": "false",
+                "client.use.lightweight.access.token.enabled": "true",
+                "post.logout.redirect.uris": "+",
+                "pkce.code.challenge.method": "S256"
+            },
+            "authenticationFlowBindingOverrides":
+            {},
+            "fullScopeAllowed": true,
+            "nodeReRegistrationTimeout": 0,
+            "protocolMappers":
+            [
+                {
+                    "id": "5e7577c8-3e31-43ee-a605-4630ea2df9ed",
+                    "name": "locale",
+                    "protocol": "openid-connect",
+                    "protocolMapper": "oidc-usermodel-attribute-mapper",
+                    "consentRequired": false,
+                    "config":
+                    {
+                        "introspection.token.claim": "true",
+                        "userinfo.token.claim": "true",
+                        "user.attribute": "locale",
+                        "id.token.claim": "true",
+                        "access.token.claim": "true",
+                        "claim.name": "locale",
+                        "jsonType.label": "String"
+                    }
+                }
+            ],
+            "defaultClientScopes":
+            [
+                "web-origins",
+                "acr",
+                "roles",
+                "profile",
+                "basic",
+                "email"
+            ],
+            "optionalClientScopes":
+            [
+                "address",
+                "phone",
+                "organization",
+                "offline_access",
+                "microprofile-jwt"
+            ],
+            "access":
+            {
+                "view": true,
+                "configure": true,
+                "manage": true
+            }
+        }
+    ],
+    "users":
+    [
+        {
+            "username": "test",
+            "enabled": true,
+            "email": "testuser@example.com",
+            "firstName": "Test",
+            "lastName": "User",
+            "credentials":
+            [
+                {
+                    "type": "password",
+                    "value": "test"
+                }
+            ]
+        }
+    ]
 }
