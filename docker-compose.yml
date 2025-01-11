@@ -36,7 +36,6 @@ services:
     volumes:
       - /etc/letsencrypt/live/darkmatterauth.ru:/etc/x509/https
       - ./realm-config.json:/opt/keycloak/data/import/realm-config.json
-      - ./clients-config.json:/opt/keycloak/data/import/clients-config.json
     depends_on:
       - keycloak-db
     ports:
